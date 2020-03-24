@@ -10,7 +10,7 @@ var proc = [];
 
     proc[1] = new Promise((resolve, reject) => {
         console.log("second promise started");
-        //     reject("interrupt");	
+        //reject("interrupt");	
         resolve({ data: "from2" })
     })
 
@@ -33,3 +33,11 @@ var proc = [];
     })
 
 })()
+
+Promise.all(proc).then((result) => {
+
+    console.log(result)
+}).catch((err) => {
+
+    console.log(err);
+})
